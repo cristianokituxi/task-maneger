@@ -21,5 +21,10 @@ using (var scope = app.Services.CreateScope())
 app.UseStaticFiles();
 app.UseRouting();
 app.MapRazorPages();
+app.MapGet("/", context =>
+{
+    context.Response.Redirect("/Tasks");
+    return Task.CompletedTask;
+});
 
 app.Run();
