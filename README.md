@@ -36,13 +36,13 @@ Linux ou outro sistema operacional compatível com .NET Core.
 1. Clonar o repositório
 Abra o terminal na sua maquina local 
 Faça o clone do repositório para sua máquina local digitando o seguinte comando:    
-``git clone https://github.com/seu-usuario/taskmanager.git``   
+``git clone https://github.com/seu-usuario/task-manager.git``  baixar o projeto em sua maquina local  
 1.1 posteriormente digite no seu terminal o seguinte comando:   
-``cd taskmaneger``
+``cd taskmaneger`` navegar até o diretório do pojeto
 
 1.2. após isso digite no seu terminal o seguinte comando:
-   ``dotnet restore``
+   ``dotnet restore`` baixar as dependências do projeto
    
 3. Rodar o projeto
 tendo feito tudo certo até aqui rode o projeto com seguinte comando:   
-``dotnet run``
+``dotnet run`` rodar o projeto
