@@ -1,0 +1,40 @@
+@page
+@model TaskManager.Pages.Tasks.IndexModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<h1>Lista de Tarefas</h1>
+<a asp-page="Create" class="btn btn-primary">Adicionar Nova Tarefa</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Título</th>
+            <th>Prioridade</th>
+            <th>Concluído</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Tasks != null && Model.Tasks.Any())
+        {
+            @foreach (var task in Model.Tasks)
+            {
+                <tr>
+                    <td>@task.Title</td>
+                    <td>@task.Priority</td>
+                    <td>@(task.IsCompleted ? "Sim" : "Não")</td>
+                    <td>
+                        <a asp-page="Edit" asp-route-id="@task.Id" class="btn btn-warning">Editar</a>
+                        <a asp-page="Delete" asp-route-id="@task.Id" class="btn btn-danger">Excluir</a>
+                    </td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="4">Nenhuma tarefa encontrada.</td>
+            </tr>
+        }
+    </tbody>
+</table>

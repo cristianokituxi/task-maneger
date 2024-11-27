@@ -1,0 +1,32 @@
+@page
+@model TaskManager.Pages.Tasks.CreateModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<h1>Adicionar Nova Tarefa</h1>
+
+<form method="post">
+    <div class="form-group">
+        <label for="Title">Título</label>
+        <input asp-for="Task.Title" class="form-control" />
+        <span asp-validation-for="Task.Title" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="Description">Descrição</label>
+        <textarea asp-for="Task.Description" class="form-control"></textarea>
+        <span asp-validation-for="Task.Description" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="Priority">Prioridade</label>
+        <select asp-for="Task.Priority" class="form-control">
+            <option value="Baixa">Baixa</option>
+            <option value="Média">Média</option>
+            <option value="Alta">Alta</option>
+        </select>
+        <span asp-validation-for="Task.Priority" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-success">Salvar</button>
+    <a asp-page="Index" class="btn btn-secondary">Cancelar</a>
+</form>

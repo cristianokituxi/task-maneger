@@ -1,0 +1,12 @@
+@page "{id:int}"
+@model TaskManager.Pages.Tasks.DeleteModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<h1>Excluir Tarefa</h1>
+
+<p>Você tem certeza que deseja excluir a tarefa "<strong>@Model.Task.Title</strong>"?</p>
+
+<form method="post">
+    <button type="submit" class="btn btn-danger">Excluir</button>
+    <a asp-page="Index" class="btn btn-secondary">Cancelar</a>
+</form>
