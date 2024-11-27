@@ -11,7 +11,6 @@ builder.Services.AddRazorPages();
 
 var app = builder.Build();
 
-// Criar banco de dados automaticamente
 using (var scope = app.Services.CreateScope())
 {
     var context = scope.ServiceProvider.GetRequiredService<TaskContext>();
